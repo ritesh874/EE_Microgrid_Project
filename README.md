@@ -50,20 +50,12 @@ Labels:
 - Faults defined in time window 0.2s – 0.4s [ from MATLAB Simulink simulations]
 
 # Model Architecture
-Input → Conv1D(128, ReLU) → MaxPooling  
-      → BiGRU(64, bidirectional)  
-      → Simple Attention  
-      → Dense(64, ReLU)  
-      → Dense(2, Softmax)
+Input → Conv1D(ReLU) → MaxPooling  → BiGRU( bidirectional)  → Simple Attention  → Dense( ReLU)   → Dense( Softmax) → Output (2)
 
-
-Conv1D: learns local features from current signals
-
-BiGRU: captures bidirectional temporal dependencies
-
-Attention: focuses on the most informative parts of the signal
-
-Softmax Output: provides interpretable fault probability distribution
+- Conv1D: learns local features from current signals
+- BiGRU: captures bidirectional temporal dependencies
+- Attention: focuses on the most informative parts of the signal
+- Softmax Output: provides interpretable fault probability distribution
 
 ## Results
 Final Test Accuracy: ~98%
